@@ -3,10 +3,10 @@ public class Calculator {
     public String calcModel;
     
     //constructor that creates an instance of the calculator class
-    private String calculatorName;
+    //private String calculatorName;
     //the calculator class has one attirbute -> a string that holds the model name of the calculator 
     public Calculator(String x) {
-        x = calculatorName;
+        calcModel = x;
     }
     
     // method that performs the operation designated by operand (which
@@ -68,6 +68,7 @@ public class Calculator {
     // with the value stored in the calcModel instance variable."
     public String info() {
         //implement code here
-        return "This calculator is a model "+ calculatorName +" where "+ calculatorName +" should be filled in with the value stored in the calcModel instance variable.";
+        
+        return "This calculator is a model "+ calcModel +" where "+ calcModel +" should be filled in with the value stored in the calcModel instance variable.";
     }
 }
