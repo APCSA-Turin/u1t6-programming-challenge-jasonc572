@@ -1,11 +1,12 @@
 package com.example.project;
-public class Calculator{
+public class Calculator {
     public String calcModel;
     
     //constructor that creates an instance of the calculator class
+    private String calculatorName;
     //the calculator class has one attirbute -> a string that holds the model name of the calculator 
     public Calculator(String x) {
-        //implement code here
+        x = calculatorName;
     }
     
     // method that performs the operation designated by operand (which
@@ -15,33 +16,51 @@ public class Calculator{
     // this method should return 0
     // REMINDER: use .equals to test if one string is equal to another (not ==)
     public double performOperation(String operand, int num1, int num2) {
-        //implement code here
-        return 0.00;
+        if (operand.equals("+")) {
+            return num1 + num2;
+         } else if (operand.equals("-")) {
+                    return num1 - num2;
+        } else if (operand.equals("*")) {
+                    return num1 * num2;
+        } else if (operand.equals("/")) {
+                    return num1 / num2;
+        }
+    return 0.00;
     }
 
     // method that checks if num1 is evenly divisible by num2, and if so,
     // returns true, and if not, returns false
     public boolean divisibleBy(int num1, int num2) {
-        //implement code here
-        return false;
+        if ((num1 % num2) == 0) {
+            return true;
+        }   else {
+            return false;
+        }
     }
 
     // method that constructs and returns a string representing a coordinate
     // pair in the format: "(x, y)"
     public String coordinatePair(int x, int y) {
         //implement code here
-        return "";
+
+        return "(" + x + "," + y + ")";
     }
     // method that determines and returns the result of |num1 - num2|
     public int absoluteValue(int num1, int num2) {
-        //implement code here
-        return 0;
+         int answer = num1 - num2;
+         if (answer >= 0) {
+            return answer;
+         } else {
+            return answer * -1;
+         }
     }
 
     //method that returns the average of two numbers. 
     //the number returned should be rounded to the nearest tenth
     public double average(int num1, int num2){
-        return 0;
+        double average = ((double) num1 + num2) / 2;
+        double average1 = Math.round(average * 10.0)/10.0;
+        return average1;
     }
     
     // method that constructs and returns a String in the format:
@@ -49,6 +68,6 @@ public class Calculator{
     // with the value stored in the calcModel instance variable."
     public String info() {
         //implement code here
-        return "";
+        return "This calculator is a model "+ calculatorName +" where "+ calculatorName +" should be filled in with the value stored in the calcModel instance variable.";
     }
 }
